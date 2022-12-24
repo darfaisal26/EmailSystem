@@ -6,7 +6,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 const SignIn = () => {
   let navigate = useNavigate();
   const handleClick = () => {
-    // console.log("values")
+    console.log("values")
     navigate("/SignUp");
   };
 
