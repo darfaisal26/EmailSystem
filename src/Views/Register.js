@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
 
-const SignUP = () => {
+const Register = () => {
   let navigate = useNavigate();
   const handleClick = () => {
     console.log("values")
-    navigate("/SignIn");
+    navigate("/Login");
   };
   const paperStyle = {padding: "25px 30px", width: 300, margin: " auto",backgroundColor: "",};
   const avatarStyle = { backgroundColor: "#f00ff0" };
@@ -28,6 +28,13 @@ const SignUP = () => {
         </Grid>
 
         <form>
+        <TextField
+          type="text"
+            fullWidth
+            label="FirstName"
+            placeholder="Enter Your FirstName"
+            style={textFieldst}
+          />
           <TextField
           type="text"
             fullWidth
@@ -73,7 +80,7 @@ const SignUP = () => {
             style={button}
             onClick={handleClick}
           >
-            Sign up
+            Register
           </Button>
         </form>
       </Paper>
@@ -81,4 +88,4 @@ const SignUP = () => {
   );
 };
 
-export default SignUP;
+export default Register;
