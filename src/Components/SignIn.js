@@ -35,20 +35,7 @@ const SignIn = () => {
         </Grid>
 
         <form>
-          {/* <TextField
-          type="text"
-            fullWidth
-            label="FirstName"
-            placeholder="Enter Your FirstName"
-            style={textFieldst}
-          />
-          <TextField
-          type="text"
-            fullWidth
-            label="LastName"
-            placeholder="Enter Your LastName"
-            style={textFieldst}
-          /> */}
+        
           <TextField
             type="email"
             fullWidth
@@ -64,14 +51,7 @@ const SignIn = () => {
             placeholder="Enter password"
             style={styles.textFieldst}
           />
-          {/* <TextField
-            type="password"
-            fullWidth
-            label="Confirm Password"
-            placeholder="confirm password"
-            required
-            style={textFieldst}
-          /> */}
+         
           <Button
             type="submit"
             variant="contained"
