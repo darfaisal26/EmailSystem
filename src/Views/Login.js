@@ -3,16 +3,18 @@ import { useNavigate } from "react-router-dom";
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
-const SignIn = () => {
+ 
+
+const Login = () => {
   let navigate = useNavigate();
   const handleClick = () => {
     console.log("values")
-    navigate("/SignUp");
+    navigate("/Register");
   };
 
   const styles={
     paperStyle:  {padding: "25px 30px", width: 300, height:'' ,margin: " auto",backgroundColor: "",},
-    avatarStyle :{ backgroundColor: "#f00ff0" },
+    avatarStyle :{ backgroundColor: "red" },
     headerStyle : { margin: 0 },
     textFieldst : { margin: "8px 0px 6px" },
     button : { margin: "6px 0px 6px  " },
@@ -23,7 +25,7 @@ const SignIn = () => {
     <Grid  style={styles.main}>
       <Paper elevation={20} style={styles.paperStyle} >
         <Grid align="center">
-          <Avatar style={ styles.avatarStyle}>
+          <Avatar style={styles.avatarStyle}>
             < LockOutlinedIcon/>
           </Avatar>
           <h2 style={ styles.headerStyle}>Sign IN</h2>
@@ -58,7 +60,7 @@ const SignIn = () => {
             style={styles.button}
             // onClick={handleClick}
           >
-            Sign IN
+            LogIn
           </Button>
 
           <Button
@@ -69,7 +71,7 @@ const SignIn = () => {
             style={styles.button}
             onClick={handleClick}
           >
-            Sign Up
+            Register
           </Button>
         </form>
       </Paper>
@@ -77,4 +79,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;
