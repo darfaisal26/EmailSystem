@@ -2,13 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { useFormik } from "formik";
-import * as yup from "yup";
+import { Formik , Form , Field , ErrorMessage} from "formik";
+import * as  Yup from "yup";
 
 const SignIn = () => {
   let navigate = useNavigate();
   const handleClick = () => {
-  //   console.log("values")
+    console.log("values")
     navigate("/SignUp");
   };
 
@@ -21,6 +21,28 @@ const SignIn = () => {
     main:{backgroundColor:"#42427a" ,height:"100vh",padding:'45px'}
   }
 
+  const initialValues = {
+      email :" " ,
+      password :" " 
+  }
+   
+  const validationSchema = Yup.object().shape( {
+       email : Yup.string().email("please enter valid email").required("Required") ,
+       password : Yup.string().required("Required")
+  }
+
+  )
+
+   const onSubmit =(values , props ) => {
+     console.log (values)
+     {/*setTimeout(() => {
+         props.resetForm()
+         props.setSubmitting(true)   
+    },2000 ) */}
+     props.resetForm()
+     console.log (props)
+   }
+ 
   return (
     <Grid  style={styles.main}>
       <Paper elevation={20} style={styles.paperStyle} >
@@ -33,25 +55,30 @@ const SignIn = () => {
             Please fill this form to create an account
           </Typography>
         </Grid>
-
-        <form>
-        
-          <TextField
+         <Formik initialValues = {initialValues} onSubmit = {onSubmit} validationSchema = {validationSchema}>  
+           {(props) => (
+           <Form>
+          
+          <Field as ={TextField}
             type="email"
-            fullWidth
+            fullWidth 
             label="Email"
+            name="email"
             placeholder="Enter Your Email"
+            helperText={<ErrorMessage name="email"/>}
             style={styles.textFieldst}
             required
           />
-          <TextField
-           type="password"
-            fullWidth
-            label="Password"
-            placeholder="Enter password"
+          < Field as = {TextField}
+           type='password'
+           fullWidth 
+            label='Password'
+            name='password'
+            placeholder='Enter password'
+            helperText={<ErrorMessage name= "password"/>}
             style={styles.textFieldst}
           />
-         
+        
           <Button
             type="submit"
             variant="contained"
@@ -73,10 +100,13 @@ const SignIn = () => {
           >
             Sign Up
           </Button>
-        </form>
+        </Form> 
+        )}
+        </Formik>
+
       </Paper>
     </Grid>
   );
-};
-
+           
+           }
 export default SignIn;
