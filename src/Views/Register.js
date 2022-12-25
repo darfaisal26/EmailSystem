@@ -28,6 +28,13 @@ const Register = () => {
         </Grid>
 
         <form>
+        <TextField
+          type="text"
+            fullWidth
+            label="FirstName"
+            placeholder="Enter Your FirstName"
+            style={textFieldst}
+          />
           <TextField
           type="text"
             fullWidth
