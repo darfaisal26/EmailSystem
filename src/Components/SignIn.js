@@ -8,7 +8,7 @@ import * as yup from "yup";
 const SignIn = () => {
   let navigate = useNavigate();
   const handleClick = () => {
-    console.log("values")
+  //   console.log("values")
     navigate("/SignUp");
   };
 
