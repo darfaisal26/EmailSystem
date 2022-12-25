@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import '../styles/signin.css';
 
 const SignIn = () => {
   let navigate = useNavigate();
@@ -10,23 +11,23 @@ const SignIn = () => {
     navigate("/SignUp");
   };
 
-  const styles={
-    paperStyle:  {padding: "25px 30px", width: 300, height:'' ,margin: " auto",backgroundColor: "",},
-    avatarStyle :{ backgroundColor: "#f00ff0" },
-    headerStyle : { margin: 0 },
-    textFieldst : { margin: "8px 0px 6px" },
-    button : { margin: "6px 0px 6px  " },
-    main:{backgroundColor:"#42427a" ,height:"100vh",padding:'45px'}
-  }
+  // const styles={
+  //   paperStyle:  {padding: "25px 30px", width: 300, height:'' ,margin: " auto",backgroundColor: "",},
+  //   avatarStyle :{ backgroundColor: "#f00ff0" },
+  //   headerStyle : { margin: 0 },
+  //   textFieldst : { margin: "8px 0px 6px" },
+  //   button : { margin: "6px 0px 6px  " },
+  //   main:{backgroundColor:"#42427a" ,height:"100vh",padding:'45px'}
+  // }
 
   return (
-    <Grid  style={styles.main}>
-      <Paper elevation={20} style={styles.paperStyle} >
+    <Grid  className='main'>
+      <Paper elevation={20}  className='paperStyle' >
         <Grid align="center">
-          <Avatar style={ styles.avatarStyle}>
+          <Avatar className='avatarStyle'>
             < LockOutlinedIcon/>
           </Avatar>
-          <h2 style={ styles.headerStyle}>Sign IN</h2>
+          <h2 className='headerStyle' >Sign IN</h2>
           <Typography variant="caption" style={{color:"mediumorchid",fontSize:'14px'}}>
             Please fill this form to create an account
           </Typography>
@@ -39,7 +40,8 @@ const SignIn = () => {
             fullWidth
             label="Email"
             placeholder="Enter Your Email"
-            style={styles.textFieldst}
+            
+            className='textFieldst'
             required
           />
           <TextField
@@ -47,7 +49,8 @@ const SignIn = () => {
             fullWidth
             label="Password"
             placeholder="Enter password"
-            style={styles.textFieldst}
+            
+            className='textFieldst'
           />
          
           <Button
@@ -55,7 +58,8 @@ const SignIn = () => {
             variant="contained"
             color="primary"
             fullWidth
-            style={styles.button}
+            
+            className='button'
             // onClick={handleClick}
           >
             Sign IN
@@ -66,7 +70,8 @@ const SignIn = () => {
             variant="contained"
             color="primary"
             fullWidth
-            style={styles.button}
+          
+            className='button'
             onClick={handleClick}
           >
             Sign Up
