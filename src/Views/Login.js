@@ -27,7 +27,7 @@ const Login = () => {
     <Grid  style={styles.main}>
       <Paper elevation={20} style={styles.paperStyle} >
         <Grid align="center">
-          <Avatar style={styles.avatarStyle}>
+          <Avatar   >
             < LockOutlinedIcon/>
           </Avatar>
           <h2 style={ styles.headerStyle}>Sign IN</h2>
