@@ -31,8 +31,8 @@ const Register = () => {
         <TextField
           type="text"
             fullWidth
-            label="FirstName"
-            placeholder="Enter Your FirstName"
+            label="Username"
+            placeholder="Enter Your Username"
             style={textFieldst}
           />
           <TextField
