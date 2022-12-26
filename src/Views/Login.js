@@ -5,11 +5,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useFormik } from "formik";
 import * as yup from "yup";
 
-const SignIn = () => {
+const Login = () => {
   let navigate = useNavigate();
   const handleClick = () => {
-  //   console.log("values")
-    navigate("/SignUp");
+     navigate("/Register");
   };
 
   const styles={
@@ -28,9 +27,9 @@ const SignIn = () => {
           <Avatar style={ styles.avatarStyle}>
             < LockOutlinedIcon/>
           </Avatar>
-          <h2 style={ styles.headerStyle}>Sign IN</h2>
-          <Typography variant="caption" style={{color:"mediumorchid",fontSize:'14px'}}>
-            Please fill this form to create an account
+          <h2 style={ styles.headerStyle}>Login</h2>
+          <Typography variant="h4" style={{color:"",fontSize:'14px'}}>
+            Enter your Details 
           </Typography>
         </Grid>
 
@@ -42,7 +41,6 @@ const SignIn = () => {
             label="Email"
             placeholder="Enter Your Email"
             style={styles.textFieldst}
-            required
           />
           <TextField
            type="password"
@@ -58,9 +56,9 @@ const SignIn = () => {
             color="primary"
             fullWidth
             style={styles.button}
-            // onClick={handleClick}
+            
           >
-            Sign IN
+            Login
           </Button>
 
           <Button
@@ -71,7 +69,7 @@ const SignIn = () => {
             style={styles.button}
             onClick={handleClick}
           >
-            Sign Up
+            Register
           </Button>
         </form>
       </Paper>
@@ -79,4 +77,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default Login;
