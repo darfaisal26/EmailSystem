@@ -7,7 +7,7 @@ const SignIn = () => {
   let navigate = useNavigate();
   const handleClick = () => {
     console.log("values")
-    navigate("/SignUp");
+    navigate("/Home");
   };
 
   const styles={
@@ -76,21 +76,12 @@ const SignIn = () => {
             color="primary"
             fullWidth
             style={styles.button}
-            // onClick={handleClick}
+             onClick={handleClick}
           >
             Sign IN
           </Button>
 
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            fullWidth
-            style={styles.button}
-            onClick={handleClick}
-          >
-            Sign Up
-          </Button>
+          
         </form>
       </Paper>
     </Grid>
