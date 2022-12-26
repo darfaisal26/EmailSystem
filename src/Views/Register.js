@@ -42,8 +42,7 @@ const Register = () => {
    }
   
   const handleClick = () => {
-    console.log("values")
-    navigate("/Login");
+    navigate("/");
   };
   
   const paperStyle = {padding: "25px 30px", width: 300, margin: " auto",backgroundColor: "",};
@@ -58,8 +57,8 @@ const Register = () => {
           <Avatar style={avatarStyle}>
             <AddCircleOutlinedIcon />
           </Avatar>
-          <h2 style={headerStyle}>Sign Up</h2>
-          <Typography variant="caption" style={{color:"mediumorchid",fontSize:'14px'}}>
+          <h2 style={headerStyle}>Register</h2>
+          <Typography variant="h4" style={{color:"mediumorchid",fontSize:'14px'}}>
             Please fill this form to create an account
           </Typography>
         </Grid>
