@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
-import { Formik , Form , Field , ErrorMessage} from "formik";
+import { Formik , Form  , ErrorMessage} from "formik";
 import * as  Yup from "yup";
 
 const Register = () => {
@@ -27,8 +27,8 @@ const Register = () => {
 }
  
 const validationSchema = Yup.object().shape( {
-    firstname :Yup.string().required("Required") ,
-    lastname :Yup.string().required("Required") ,
+     firstname :Yup.string().required("Required") ,
+     lastname :Yup.string().required("Required") ,
      email : Yup.string().email("please enter valid email").required("Required") ,
      password : Yup.string().required("Required") ,
      confirmpassword :Yup.string().required("Same as password")
@@ -54,25 +54,23 @@ const validationSchema = Yup.object().shape( {
             Please fill this form to create an account
           </Typography>
         </Grid>
-<<<<<<< HEAD:src/Views/Register.js
 
-        <form>
-        <TextField
-          type="text"
-            fullWidth
-            label="Username"
-            placeholder="Enter Your Username"
-            style={textFieldst}
-          />
-          <TextField
-=======
+        {/* <form> */}
+          {/* <TextField/> */}
         <Formik initialValues = {initialValues} onSubmit = {onSubmit} validationSchema = {validationSchema}>  
            {(props) => (
-           <Form>
+             <Form>
           
-          <Field as ={TextField}
->>>>>>> origin/Asifa:src/Components/SignUP.js
+          <TextField
           type="text"
+          fullWidth
+          label="Username"
+          placeholder="Enter Your Username"
+          style={textFieldst}
+                // as ={TextField} */}
+                />
+            <TextField
+            type="text"
             fullWidth
             label="FirstName"
             name="firstname"
@@ -100,7 +98,7 @@ const validationSchema = Yup.object().shape( {
             required
           />
           <TextField
-           type="password"
+            type="password"
             fullWidth
             label="Password"
             name="password"

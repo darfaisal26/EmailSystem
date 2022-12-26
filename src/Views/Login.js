@@ -8,12 +8,12 @@ import * as  Yup from "yup";
 const Login = () => {
   let navigate = useNavigate();
   const handleClick = () => {
-<<<<<<< HEAD:src/Views/Login.js
+// <<<<<<< HEAD:src/Views/Login.js
      navigate("/Register");
-=======
-    console.log("values")
-    navigate("/SignUp");
->>>>>>> origin/Asifa:src/Components/SignIn.js
+// =======
+    // console.log("values")
+    // navigate("/SignUp");
+// >>>>>>> origin/Asifa:src/Components/SignIn.js
   };
 
   const styles={
@@ -110,12 +110,12 @@ const Login = () => {
       </Paper>
     </Grid>
   );
-<<<<<<< HEAD:src/Views/Login.js
+// <<<<<<< HEAD:src/Views/Login.js
 };
 
 export default Login;
-=======
+// =======
            
-           }
-export default SignIn;
->>>>>>> origin/Asifa:src/Components/SignIn.js
+           
+// export default SignIn;
+// >>>>>>> origin/Asifa:src/Components/SignIn.js
