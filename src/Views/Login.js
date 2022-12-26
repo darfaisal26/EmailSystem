@@ -4,13 +4,33 @@ import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { useState } from "react";
+import {LOGIN } from "../GraphQl/Login";
+import { useMutation } from "@apollo/client";
 
  
 
 const Login = () => {
   let navigate = useNavigate();
+    const initialValues = {
+      email: "",
+      password: "",
+     
+    };
+   
+    const [Login, setLogin] = useState(initialValues);
+    const changeHandler = (event) => {
+    const { name, value } = event.target;
+    console.log("value", value, "event", event.target.name, "name", name);
+    setLogin({
+      ...Login,
+      [name]: value,
+    })
+   
+  };
+  const [login] = useMutation(LOGIN);
+  
   const handleClick = () => {
-    console.log("values")
     navigate("/Register");
   };
 
@@ -45,6 +65,8 @@ const Login = () => {
             placeholder="Enter Your Email"
             style={styles.textFieldst}
             required
+            value={Login.email}
+            onChange={changeHandler}
           />
           <TextField
            type="password"
@@ -52,6 +74,8 @@ const Login = () => {
             label="Password"
             placeholder="Enter password"
             style={styles.textFieldst}
+            value={Login.password}
+            onChange={changeHandler}
           />
          
           <Button
@@ -60,7 +84,15 @@ const Login = () => {
             color="primary"
             fullWidth
             style={styles.button}
-            // onClick={handleClick}
+            
+            onClick={() => {
+              login({
+                variables: {
+                  email: Login.email,
+                  password: Login.password,
+                },
+              });
+            }}
           >
             LogIn
           </Button>
