@@ -24,7 +24,7 @@ const Header = () => {
        <Tabs  sx={{marginLeft:"auto"}}textColor=''>
       
 <Tab icon={<MailOutlineOutlinedIcon  />}              label="Email" to="/Email" component={Link} />
-<Tab icon={<GroupsIcon />}      label="Registered Users" to="/Users" component={Link}/>
+<Tab icon={<GroupsIcon />}      label="Users" to="/Users" component={Link}/>
 <Tab icon={<HomeIcon/>}                   label="Home"  to="/Home" component={Link}               />
 <Tab icon={<ContactPhoneIcon />}                 label="Contact Us" to="/contactus" component={Link}/>
        </Tabs>
