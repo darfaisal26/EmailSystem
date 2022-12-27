@@ -31,11 +31,9 @@ const validationSchema = Yup.object().shape( {
     firstname :Yup.string().required("Required") ,
     lastname :Yup.string().required("Required") ,
      email : Yup.string().email("please enter valid email").required("Required") ,
-     password : Yup.string().required("Required") ,
-     confirmpassword :Yup.string().required("Same as password")
-}
-
-)
+     password : Yup.string().required("Password is mendatory").min(3,"Password must be 3 char long") ,
+     confirmpassword :Yup.string().required("Password is mendatory").oneOf([Yup.ref('password')],'Passwords does not match') 
+})
 
  const onSubmit =(values , props ) => {
    console.log (values)
