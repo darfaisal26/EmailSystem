@@ -52,9 +52,9 @@ const validationSchema = Yup.object().shape( {
             Please fill this form to create an account
           </Typography>
         </Grid>
-<<<<<<< HEAD:src/Views/Register.js
+{/* <<<<<<< HEAD:src/Views/Register.js */}
 
-        <form>
+        <Form>
         <TextField
           type="text"
             fullWidth
@@ -62,20 +62,15 @@ const validationSchema = Yup.object().shape( {
             placeholder="Enter Your Username"
             style={textFieldst}
           />
+          // as ={TextField}
           <TextField
-=======
-        <Formik initialValues = {initialValues} onSubmit = {onSubmit} validationSchema = {validationSchema}>  
-           {(props) => (
-           <Form>
           
-          <Field as ={TextField}
->>>>>>> origin/Asifa:src/Components/SignUP.js
           type="text"
             fullWidth
             label="FirstName"
             name="firstname"
             placeholder="Enter Your FirstName"
-            helperText={<ErrorMessage name="firstname"/>}
+            // helperText={<ErrorMessage name="firstname"/>}
             style={textFieldst}
           />
           <TextField
@@ -84,7 +79,7 @@ const validationSchema = Yup.object().shape( {
             label="LastName"
             name="lastname"
             placeholder="Enter Your LastName"
-            helperText={<ErrorMessage name="lastname"/>}
+            // helperText={<ErrorMessage name="lastname"/>}
             style={textFieldst}
           />
           <TextField
@@ -93,7 +88,7 @@ const validationSchema = Yup.object().shape( {
             label="Email"
             name="email"
             placeholder="Enter Your Email"
-            helperText={<ErrorMessage name="email"/>}
+            // helperText={<ErrorMessage name="email"/>}
             style={textFieldst}
             required
           />
@@ -103,7 +98,7 @@ const validationSchema = Yup.object().shape( {
             label="Password"
             name="password"
             placeholder="Enter password"
-            helperText={<ErrorMessage name="password"/>}
+            // helperText={<ErrorMessage name="password"/>}
             style={textFieldst}
           />
           <TextField
@@ -112,7 +107,7 @@ const validationSchema = Yup.object().shape( {
             label="Confirm Password"
             name="confirmpassword"
             placeholder="confirm password"
-            helperText={<ErrorMessage name="confirmpassword"/>}
+            // helperText={<ErrorMessage name="confirmpassword"/>}
             required
             style={textFieldst}
           />
@@ -128,8 +123,8 @@ const validationSchema = Yup.object().shape( {
           </Button>
         </Form>
            
-           )}
-           </Formik>
+           {/* )} */}
+           {/* </Formik> */}
       </Paper>
     </Grid>
   );
