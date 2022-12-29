@@ -8,11 +8,10 @@ import * as  Yup from "yup";
 const SignUP = () => {
   let navigate = useNavigate();
   const handleClick = () => {
-    console.log("values")
     navigate("/SignIn");
   };
   const paperStyle = {padding: "25px 30px", width: 300, margin: " auto",backgroundColor: "",};
-  const avatarStyle = { backgroundColor: "#f00ff0" };
+  const avatarStyle = { backgroundColor: " #292987;" };
   const headerStyle = { margin: 0 };
   const textFieldst = { margin: "8px 0px 6px" };
   const button = { margin: "6px 0px 6px  " };
@@ -47,7 +46,7 @@ const validationSchema = Yup.object().shape( {
             <AddCircleOutlinedIcon />
           </Avatar>
           <h2 style={headerStyle}>Sign Up</h2>
-          <Typography variant="caption" style={{color:"mediumorchid",fontSize:'14px'}}>
+          <Typography variant="caption" style={{fontSize:'14px'}}>
             Please fill this form to create an account
           </Typography>
         </Grid>
@@ -58,48 +57,17 @@ const validationSchema = Yup.object().shape( {
           <Field as ={TextField}
           type="text"
             fullWidth
-            label="FirstName"
-            name="firstname"
+            label="First Name"
             placeholder="Enter Your FirstName"
             helperText={<ErrorMessage name="firstname"/>}
             style={textFieldst}
           />
           <TextField
-          type="text"
             fullWidth
-            label="LastName"
-            name="lastname"
-            placeholder="Enter Your LastName"
-            helperText={<ErrorMessage name="lastname"/>}
-            style={textFieldst}
-          />
-          <TextField
-            type="email"
-            fullWidth
-            label="Email"
-            name="email"
-            placeholder="Enter Your Email"
-            helperText={<ErrorMessage name="email"/>}
-            style={textFieldst}
-            required
-          />
-          <TextField
-           type="password"
-            fullWidth
-            label="Password"
-            name="password"
-            placeholder="Enter password"
-            helperText={<ErrorMessage name="password"/>}
-            style={textFieldst}
-          />
-          <TextField
             type="password"
-            fullWidth
             label="Confirm Password"
             name="confirmpassword"
             placeholder="confirm password"
-            helperText={<ErrorMessage name="confirmpassword"/>}
-            required
             style={textFieldst}
           />
           <Button
