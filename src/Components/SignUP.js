@@ -2,9 +2,45 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
-
+import { useState } from "react";
+import { Register} from "../Graphql/Register";
+import { useMutation } from "@apollo/client";
 const SignUP = () => {
   let navigate = useNavigate();
+  const initialValues = {
+  
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const [register, setRegister] = useState(initialValues);
+  const changeHandler = (event) => {
+    const { name, value } = event.target;
+    console.log(useNavigate)
+    setRegister({
+      ...register,
+      [name]: value,
+    });
+  };
+  const [registerUser] = useMutation(Register)
+  const submitHandler = async (event) => {
+    
+     registerUser({
+           variables: {
+          
+             firstName: register.firstName,
+             lastName: register.lastName,
+             email: register.email,
+             password: register.password,
+             confirmPassword: register.confirmPassword,
+           },
+
+        }); 
+        console.log("message")
+      }
   const handleClick = () => {
     console.log("values")
     navigate("/SignIn");
@@ -34,6 +70,8 @@ const SignUP = () => {
             label="FirstName"
             placeholder="Enter Your FirstName"
             style={textFieldst}
+            value={register.firstName}
+            onChange={changeHandler}
           />
           <TextField
           type="text"
@@ -41,6 +79,8 @@ const SignUP = () => {
             label="LastName"
             placeholder="Enter Your LastName"
             style={textFieldst}
+            value={register.lastName}
+            onChange={changeHandler}
           />
           <TextField
             type="email"
@@ -49,6 +89,8 @@ const SignUP = () => {
             placeholder="Enter Your Email"
             style={textFieldst}
             required
+            value={register.email}
+            onChange={changeHandler}
           />
           <TextField
            type="password"
@@ -56,6 +98,8 @@ const SignUP = () => {
             label="Password"
             placeholder="Enter password"
             style={textFieldst}
+            value={register.password}
+            onChange={changeHandler}
           />
           <TextField
             type="password"
@@ -64,6 +108,8 @@ const SignUP = () => {
             placeholder="confirm password"
             required
             style={textFieldst}
+            value={register.confirmPassword}
+            onChange={changeHandler}
           />
           <Button
             type="submit"

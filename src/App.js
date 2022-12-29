@@ -7,9 +7,16 @@ import Email from './Components/Email';
 import Users from './Components/Users';
 import Error from './Components/Error';
 import ContactUs from './Components/ContactUs';
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 function App() {
+  const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    uri:
+      "http://emailproject-env.eba-pwtpkn6y.ap-south-1.elasticbeanstalk.com/graphql",
+  });
   return (
+    <ApolloProvider client={client}>
     <div>
       <BrowserRouter>
       <Routes>
@@ -24,6 +31,7 @@ function App() {
       </Routes>
       </BrowserRouter>
       </div>
+      </ApolloProvider>
   );
 }
 
