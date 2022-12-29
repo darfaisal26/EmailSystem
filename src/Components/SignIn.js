@@ -1,14 +1,37 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
+import {useState} from "react"; 
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+<<<<<<< HEAD
 import { Formik , Form , Field , ErrorMessage} from "formik";
 import * as  Yup from "yup";
 
 
+=======
+import {LOGIN } from "../graphql/Login";
+import { useMutation } from "@apollo/client";
+>>>>>>> origin/signin-ubaid
 
 const SignIn = () => {
   let navigate = useNavigate();
+  const initialValues = {
+    email: "",
+    password: "",
+   
+  };
+ 
+  const [Login, setLogin] = useState(initialValues);
+  const changeHandler = (event) => {
+  const { name, value } = event.target;
+  console.log("value", value, "event", event.target.name, "name", name);
+  setLogin({
+    ...Login,
+    [name]: value,
+  })
+ 
+};
+const [login] = useMutation(LOGIN);
   const handleClick = () => {
     console.log("values")
     navigate("/Home");
@@ -67,7 +90,10 @@ const validationSchema = Yup.object().shape( {
             placeholder="Enter Your Email"
             helperText={<ErrorMessage name="email"/>}
             style={styles.textFieldst}
+            value={Login.email}
+            onChange={changeHandler}
             required
+
           />
           < Field as = {TextField}
            type='password'
@@ -77,6 +103,8 @@ const validationSchema = Yup.object().shape( {
             placeholder='Enter password'
             helperText={<ErrorMessage name= "password"/>}
             style={styles.textFieldst}
+            value={Login.password}
+            onChange={changeHandler}
           />
         
           
