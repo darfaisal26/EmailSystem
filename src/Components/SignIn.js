@@ -3,15 +3,12 @@ import {useNavigate } from "react-router-dom";
 import {useState} from "react"; 
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-<<<<<<< HEAD
 import { Formik , Form , Field , ErrorMessage} from "formik";
 import * as  Yup from "yup";
-
-
-=======
-import {LOGIN } from "../graphql/Login";
 import { useMutation } from "@apollo/client";
->>>>>>> origin/signin-ubaid
+import { LOGIN } from "../Graphql/Login";
+
+
 
 const SignIn = () => {
   let navigate = useNavigate();
@@ -46,10 +43,10 @@ const [login] = useMutation(LOGIN);
     main:{backgroundColor:"#42427a" ,height:"100vh",padding:'45px'}
   }
 
-  const initialValues = {
-    email :" " ,
-    password :" " 
-}
+//   // const initialValues = {
+//   //   email :" " ,
+//   //   password :" " 
+// }
  
 const validationSchema = Yup.object().shape( {
      email : Yup.string().email("Please enter valid email").required("Email is Required") ,
