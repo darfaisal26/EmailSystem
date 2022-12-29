@@ -33,11 +33,11 @@ const SignUP = () => {
      registerUser({
            variables: {
           
-             firstName: register.firstName,
-             lastName: register.lastName,
+             firstName: register.first_name,
+             lastName: register.last_name,
              email: register.email,
              password: register.password,
-             confirmPassword: register.confirmPassword,
+             confirmPassword: register.confirm_password,
            },
 
         }); 
@@ -99,7 +99,7 @@ const validationSchema = Yup.object().shape( {
             placeholder="Enter Your FirstName"
             helperText={<ErrorMessage name="firstname"/>}
             style={textFieldst}
-            value={register.firstName}
+            value={register.first_name}
             onChange={changeHandler}
           />
           <TextField
@@ -110,7 +110,7 @@ const validationSchema = Yup.object().shape( {
             placeholder="Enter Your LastName"
             helperText={<ErrorMessage name="lastname"/>}
             style={textFieldst}
-            value={register.lastName}
+            value={register.last_name}
             onChange={changeHandler}
           />
           <TextField
@@ -145,7 +145,7 @@ const validationSchema = Yup.object().shape( {
             helperText={<ErrorMessage name="confirmpassword"/>}
             required
             style={textFieldst}
-            value={register.confirmPassword}
+            value={register.confirm_password}
             onChange={changeHandler}
           />
           <Button
