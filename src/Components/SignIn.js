@@ -3,8 +3,12 @@ import {useNavigate } from "react-router-dom";
 import {useState} from "react"; 
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import {LOGIN } from "../graphql/Login";
+import { Formik , Form , Field , ErrorMessage} from "formik";
+import * as  Yup from "yup";
 import { useMutation } from "@apollo/client";
+import { LOGIN } from "../Graphql/Login";
+
+
 
 const SignIn = () => {
   let navigate = useNavigate();
@@ -39,6 +43,26 @@ const [login] = useMutation(LOGIN);
     main:{backgroundColor:"#42427a" ,height:"100vh",padding:'45px'}
   }
 
+//   // const initialValues = {
+//   //   email :" " ,
+//   //   password :" " 
+// }
+ 
+const validationSchema = Yup.object().shape( {
+     email : Yup.string().email("Please enter valid email").required("Email is Required") ,
+     password : Yup.string().required("Password is Required")
+}
+
+)
+
+ const onSubmit =(values , props ) => {
+   console.log (values)
+   
+   props.resetForm()
+   console.log (props)
+ }
+
+
   return (
     <Grid  style={styles.main}>
       <Paper elevation={20} style={styles.paperStyle} >
@@ -51,50 +75,36 @@ const [login] = useMutation(LOGIN);
             Please fill this form to create an account
           </Typography>
         </Grid>
-
-        <form>
-          {/* <TextField
-          type="text"
-            fullWidth
-            label="FirstName"
-            placeholder="Enter Your FirstName"
-            style={textFieldst}
-          />
-          <TextField
-          type="text"
-            fullWidth
-            label="LastName"
-            placeholder="Enter Your LastName"
-            style={textFieldst}
-          /> */}
-          <TextField
+        <Formik initialValues = {initialValues} onSubmit = {onSubmit} validationSchema = {validationSchema}>  
+           {(props) => (
+           <Form>
+          
+          <Field as ={TextField}
             type="email"
-            fullWidth
+            fullWidth 
             label="Email"
+            name="email"
             placeholder="Enter Your Email"
+            helperText={<ErrorMessage name="email"/>}
             style={styles.textFieldst}
             value={Login.email}
             onChange={changeHandler}
             required
 
           />
-          <TextField
-           type="password"
-            fullWidth
-            label="Password"
-            placeholder="Enter password"
+          < Field as = {TextField}
+           type='password'
+           fullWidth 
+            label='Password'
+            name='password'
+            placeholder='Enter password'
+            helperText={<ErrorMessage name= "password"/>}
             style={styles.textFieldst}
             value={Login.password}
             onChange={changeHandler}
           />
-          {/* <TextField
-            type="password"
-            fullWidth
-            label="Confirm Password"
-            placeholder="confirm password"
-            required
-            style={textFieldst}
-          /> */}
+        
+          
           <Button
             type="submit"
             variant="contained"
@@ -105,9 +115,12 @@ const [login] = useMutation(LOGIN);
           >
             Sign IN
           </Button>
-
+           
+        </Form> 
+        )}
+        </Formik>
           
-        </form>
+        
       </Paper>
     </Grid>
   );
