@@ -6,11 +6,10 @@ import AddCircleOutlinedIcon from "@mui/icons-material/AddCircleOutlined";
 const SignUP = () => {
   let navigate = useNavigate();
   const handleClick = () => {
-    console.log("values")
     navigate("/SignIn");
   };
   const paperStyle = {padding: "25px 30px", width: 300, margin: " auto",backgroundColor: "",};
-  const avatarStyle = { backgroundColor: "#f00ff0" };
+  const avatarStyle = { backgroundColor: " #292987;" };
   const headerStyle = { margin: 0 };
   const textFieldst = { margin: "8px 0px 6px" };
   const button = { margin: "6px 0px 6px  " };
@@ -22,7 +21,7 @@ const SignUP = () => {
             <AddCircleOutlinedIcon />
           </Avatar>
           <h2 style={headerStyle}>Sign Up</h2>
-          <Typography variant="caption" style={{color:"mediumorchid",fontSize:'14px'}}>
+          <Typography variant="caption" style={{fontSize:'14px'}}>
             Please fill this form to create an account
           </Typography>
         </Grid>
@@ -31,14 +30,14 @@ const SignUP = () => {
           <TextField
           type="text"
             fullWidth
-            label="FirstName"
+            label="First Name"
             placeholder="Enter Your FirstName"
             style={textFieldst}
           />
           <TextField
           type="text"
             fullWidth
-            label="LastName"
+            label="Last Name"
             placeholder="Enter Your LastName"
             style={textFieldst}
           />
@@ -48,7 +47,6 @@ const SignUP = () => {
             label="Email"
             placeholder="Enter Your Email"
             style={textFieldst}
-            required
           />
           <TextField
            type="password"
@@ -62,7 +60,6 @@ const SignUP = () => {
             fullWidth
             label="Confirm Password"
             placeholder="confirm password"
-            required
             style={textFieldst}
           />
           <Button
