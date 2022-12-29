@@ -1,10 +1,30 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
+import {useState} from "react"; 
 import {Avatar,Grid,Paper,TextField,Typography,Button,} from "@mui/material";
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import {LOGIN } from "../graphql/Login";
+import { useMutation } from "@apollo/client";
 
 const SignIn = () => {
   let navigate = useNavigate();
+  const initialValues = {
+    email: "",
+    password: "",
+   
+  };
+ 
+  const [Login, setLogin] = useState(initialValues);
+  const changeHandler = (event) => {
+  const { name, value } = event.target;
+  console.log("value", value, "event", event.target.name, "name", name);
+  setLogin({
+    ...Login,
+    [name]: value,
+  })
+ 
+};
+const [login] = useMutation(LOGIN);
   const handleClick = () => {
     console.log("values")
     navigate("/Home");
@@ -53,7 +73,10 @@ const SignIn = () => {
             label="Email"
             placeholder="Enter Your Email"
             style={styles.textFieldst}
+            value={Login.email}
+            onChange={changeHandler}
             required
+
           />
           <TextField
            type="password"
@@ -61,6 +84,8 @@ const SignIn = () => {
             label="Password"
             placeholder="Enter password"
             style={styles.textFieldst}
+            value={Login.password}
+            onChange={changeHandler}
           />
           {/* <TextField
             type="password"
