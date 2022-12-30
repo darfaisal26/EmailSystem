@@ -58,7 +58,7 @@ const Email = () => {
             style={styles.textFields1}
           /> 
           <Button
-          margin="6px 0px 6px  "
+          
             type="submit"
             variant="contained"
             color="primary"

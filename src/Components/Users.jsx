@@ -29,11 +29,11 @@ const Users = () => {
   return ( 
     <> 
 <Header/>    
-<Container >
+<Container spacing={7} >
   <Paper component={Box} p={4} marginTop={10}>
     {
       users.map((user,index)=>(
-        <Grid container spacing={4}  key={index}> 
+        <Grid container spacing={4}   key={index}> 
     <Grid item md={3}><TextField
     label="Name"
     placeholder="Enter Name"

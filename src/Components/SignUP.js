@@ -10,7 +10,7 @@ const SignUP = () => {
     navigate("/SignIn");
   };
   const paperStyle = {padding: "25px 30px", width: 300, margin: " auto",backgroundColor: "",};
-  const avatarStyle = { backgroundColor: "#f00ff0" };
+  const avatarStyle = { backgroundColor: "#3f51b5" };
   const headerStyle = { margin: 0 };
   const textFieldst = { margin: "8px 0px 6px" };
   const button = { margin: "6px 0px 6px  " };
@@ -22,7 +22,7 @@ const SignUP = () => {
             <AddCircleOutlinedIcon />
           </Avatar>
           <h2 style={headerStyle}>Sign Up</h2>
-          <Typography variant="caption" style={{color:"mediumorchid",fontSize:'14px'}}>
+          <Typography variant="caption" style={{color:"#333",fontSize:'14px'}}>
             Please fill this form to create an account
           </Typography>
         </Grid>
@@ -31,15 +31,15 @@ const SignUP = () => {
           <TextField
           type="text"
             fullWidth
-            label="FirstName"
-            placeholder="Enter Your FirstName"
+            label="First Name"
+            placeholder="Enter Your First Name"
             style={textFieldst}
           />
           <TextField
           type="text"
             fullWidth
-            label="LastName"
-            placeholder="Enter Your LastName"
+            label="Last Name"
+            placeholder="Enter Your Last Name"
             style={textFieldst}
           />
           <TextField

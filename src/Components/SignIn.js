@@ -12,7 +12,7 @@ const SignIn = () => {
 
   const styles={
     paperStyle:  {padding: "25px 30px", width: 300, height:'' ,margin: " auto",backgroundColor: "",},
-    avatarStyle :{ backgroundColor: "#f00ff0" },
+    avatarStyle :{ backgroundColor: "#3f51b5" },
     headerStyle : { margin: 0 },
     textFieldst : { margin: "8px 0px 6px" },
     button : { margin: "6px 0px 6px  " },
@@ -27,7 +27,7 @@ const SignIn = () => {
             < LockOutlinedIcon/>
           </Avatar>
           <h2 style={ styles.headerStyle}>Sign IN</h2>
-          <Typography variant="caption" style={{color:"mediumorchid",fontSize:'14px'}}>
+          <Typography variant="caption" style={{fontSize:'14px'}}>
             Please fill this form to create an account
           </Typography>
         </Grid>
