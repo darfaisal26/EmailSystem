@@ -1,4 +1,203 @@
-import * as React from 'react';
+import React,{useState} from 'react'
+import Header from './Header';
+import { Container,Paper, Box, Grid, TextField, IconButton,Button } from "@mui/material";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
+
+
+
+
+
+
+const Users = () => {
+
+  const userTemplate={name:"", email: "" , mobilenumber:""};
+  const[users,setUsers]=useState([userTemplate]);
+  const addUser=()=>{
+    setUsers([...users,userTemplate]);
+  };
+    const onChange =(e,index)=>
+    {
+     const updatedUsers =users.map((user,i)=> index ===i ? Object.assign(user,{[e.target.name]: e.target.value})
+      :user) ;
+      setUsers(updatedUsers);
+    };
+    
+
+    
+  
+  return ( 
+    <> 
+<Header/>    
+<Container >
+  <Paper component={Box} p={4} marginTop={10}>
+    {
+      users.map((user,index)=>(
+        <Grid container spacing={4}  key={index}> 
+    <Grid item md={3}><TextField
+    label="Name"
+    placeholder="Enter Name"
+    variant="outlined"
+    name='name'
+    onChange={e=> onChange(e,index)}
+    value={user.name}
+    fullWidth/> 
+    </Grid> 
+    <Grid item md={3}>
+      <TextField
+      type="email"
+    label="Email"
+    placeholder="Enter Email ID"
+    variant="outlined"
+    name='email'
+    onChange={e=> onChange(e,index)}
+    value={user.email}
+    fullWidth/> 
+    </Grid> 
+    <Grid item md={3}><TextField
+    label="Mobile Number"
+    placeholder="Enter Mobile Number"
+    variant="outlined"
+    name='mobilenumber'
+    onChange={e=> onChange(e,index)}
+    value={user.mobilenumber}
+    fullWidth/> 
+    </Grid> 
+    <Grid item md={1}>
+      <IconButton color="error" >
+      <DeleteOutlineIcon />
+      </IconButton>
+    </Grid> 
+    <Grid item md={1}>
+      <IconButton color="primary" >
+      <MailOutlinedIcon/>
+      </IconButton>
+    </Grid> 
+    </Grid>
+      ))
+    }
+    <Button variant="contained"   onClick={addUser}  >  
+    ADD MORE USER</Button>
+      </Paper>
+      </Container>
+    </>
+
+  )
+}
+
+export default Users
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
