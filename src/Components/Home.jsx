@@ -39,7 +39,11 @@ const Home = () => {
           >
             Secure, smart, and easy to use email
             <br></br>
-            Stay connected and get organized
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+                                   Stay connected and get organized
           </Typography>
         </CardContent>
       </Card>
@@ -66,6 +70,10 @@ const Home = () => {
           >
             Email that's secure, private, and puts you in control.
             <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
             Get started with a more powerful mail system
           </Typography>
         </CardContent>
